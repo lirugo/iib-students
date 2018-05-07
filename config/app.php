@@ -160,6 +160,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Authy register
+        App\Providers\AuthyServiceProvider::class,
+
+
+
     ],
 
     /*
@@ -208,6 +213,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //Set authy
+        'Authy' => App\Facades\Authy::class,
 
     ],
 
