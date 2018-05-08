@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Facades\Authy;
 use App\Services\Authy\Exceptions\InvalidTokenException;
+use App\Services\Authy\Exceptions\SmsRequestFailedExceptions;
+use App\User;
 use Auth;
-use Authy;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -43,5 +45,23 @@ class AuthTokenController extends Controller
         }
 
         return redirect()->url('/');
+    }
+
+    public function getResend(Request $request){
+        //Get user id in session
+        $user = User::findOrFail($request->session()->get('authy.user_id'));
+        //Check have user sms two factor auth if not redirect back
+        if(!$user->hasSmsTwoFactorAuthenticationEnabled()){
+            return redirect()->back();
+        }
+
+        try{
+            Authy::requestSms($user);
+        }catch(SmsRequestFailedExceptions $e){
+            return redirect()->back();
+        }
+
+        return redirect()->back();
+
     }
 }

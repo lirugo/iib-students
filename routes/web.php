@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route for two factor auth
 Route::get('/auth/token', 'Auth\AuthTokenController@getToken');
 Route::post('/auth/token', 'Auth\AuthTokenController@postToken');
+//Resend token
+Route::get('/auth/token/resend', 'Auth\AuthTokenController@getResend');
