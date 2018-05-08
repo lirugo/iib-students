@@ -24,3 +24,10 @@ Route::get('/auth/token', 'Auth\AuthTokenController@getToken');
 Route::post('/auth/token', 'Auth\AuthTokenController@postToken');
 //Resend token
 Route::get('/auth/token/resend', 'Auth\AuthTokenController@getResend');
+
+//User route
+Route::group(['middleware' => 'auth'], function(){
+    //Profile route
+    Route::get('/user/profile', 'User\ProfileController@index');
+    Route::post('/user/profile', 'User\ProfileController@update')->name('user.profile.update');
+});

@@ -162,7 +162,8 @@ return [
 
         // Authy register
         App\Providers\AuthyServiceProvider::class,
-
+        // LaravelCollective
+        Collective\Html\HtmlServiceProvider::class,
 
 
     ],
@@ -216,6 +217,9 @@ return [
 
         //Set authy
         'Authy' => App\Facades\Authy::class,
+        //Laravel Collective
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
