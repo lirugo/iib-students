@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAuthyColumnToUsersTable extends Migration
+class AddSurnameMiddleNamePhoneEtcToUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddAuthyColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('two_factor_type', ['off','sms'])->default('sms')->after('password');
-            $table->string('authy_id')->unique()->nullable()->after('two_factor_type');
+            $table->string('surname')->after('id');
+            $table->string('middle_name')->after('name');
         });
     }
 
@@ -27,8 +27,8 @@ class AddAuthyColumnToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function($table) {
-            $table->dropColumn('two_factor_type');
-            $table->dropColumn('authy_id');
+            $table->dropColumn('surname');
+            $table->dropColumn('middle_name');
         });
     }
 }

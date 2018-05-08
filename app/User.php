@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'surname', 'name', 'middle_name', 'email', 'password',
     ];
 
     /**
@@ -40,5 +40,12 @@ class User extends Authenticatable
 
     public function hasSmsTwoFactorAuthenticationEnabled(){
         return $this->two_factor_type === 'sms';
+    }
+    public function addPhoneNumber($phoneNumber, $phoneNumberDiallingCode){
+        //Create phone number
+        return $this->phoneNumber()->create([
+            'phone_number' => $phoneNumber,
+            'dialling_code_id' => $phoneNumberDiallingCode
+        ]);
     }
 }

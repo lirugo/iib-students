@@ -29,7 +29,13 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request){
+        //Validate
 
+        //Persist to database
+
+        //Show flash message
+
+        //Redirect back
         return redirect()->back();
     }
 }

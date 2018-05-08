@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\DiallingCode;
+use App\Services\Authy\Exceptions\RegistrationFailedException;
 use App\User;
 use App\Http\Controllers\Controller;
+use Authy;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -63,10 +66,36 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        //Create user
+        $user =  User::create([
+            'surname' => $data['surname'],
             'name' => $data['name'],
+            'middle_name' => $data['middle_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'two_factor_type' => 'sms',
+        ]);
+        //Add phone to user
+        $user->addPhoneNumber($data['phone'], $data['dialling_code']);
+        //Add authy id
+        try {
+            $authyId = Authy::registerUser($user);
+            $user->authy_id = $authyId;
+        }catch(RegistrationFailedException $e){
+            return redirect()->back();
+        }
+
+        //Return user
+        return $user;
+    }
+
+    /**
+     * Method overriding
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    protected function showRegistrationForm(){
+        return view('auth.register')->with([
+            'diallingCodes' => DiallingCode::all(),
         ]);
     }
 }
