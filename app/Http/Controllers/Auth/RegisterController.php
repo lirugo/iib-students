@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\DiallingCode;
 use App\Services\Authy\Exceptions\RegistrationFailedException;
+use App\Services\Authy\Exceptions\SmsRequestFailedExceptions;
 use App\User;
 use App\Http\Controllers\Controller;
+use Auth;
 use Authy;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -32,7 +35,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
+    protected $redirectToToken = '/auth/token';
     /**
      * Create a new controller instance.
      *
@@ -73,7 +76,6 @@ class RegisterController extends Controller
             'middle_name' => $data['middle_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'two_factor_type' => 'sms',
         ]);
         //Add phone to user
         $user->addPhoneNumber($data['phone'], $data['dialling_code']);
@@ -86,7 +88,7 @@ class RegisterController extends Controller
             return redirect()->back();
         }
 
-        //Return user
+        //Redirect to token
         return $user;
     }
 
@@ -98,5 +100,42 @@ class RegisterController extends Controller
         return view('auth.register')->with([
             'diallingCodes' => DiallingCode::all(),
         ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param $user
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    protected function registered(Request $request, $user)
+    {
+        //Logout
+        Auth::guard()->logout();
+        //Add data in session
+        $request->session()->put('authy',[
+            'user_id' => $user->id,
+            'authy_id' => $user->authy_id,
+            'using_sms' => false,
+            'remember' => $request->has('remember'),
+        ]);
+        //Send sms
+        try{
+            Authy::requestSms($user);
+        }catch (SmsRequestFailedExceptions $e){
+            return redirect()->back();
+        }
+        //Set have sms auth
+        $request->session()->push('authy.using_sms', true);
+        //Redirect to token page
+        return redirect($this->redirectToTokenPath());
+    }
+
+    //Redirect to token path
+
+    /**
+     * @return string
+     */
+    protected function redirectToTokenPath(){
+        return $this->redirectToToken;
     }
 }
