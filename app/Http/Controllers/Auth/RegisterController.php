@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -88,7 +89,7 @@ class RegisterController extends Controller
             return redirect()->back();
         }
 
-        //Redirect to token
+        //Return user
         return $user;
     }
 
@@ -126,12 +127,13 @@ class RegisterController extends Controller
         }
         //Set have sms auth
         $request->session()->push('authy.using_sms', true);
+        //Show flash message
+        Session::flash('info', 'We sent sms on your phone with token.');
         //Redirect to token page
         return redirect($this->redirectToTokenPath());
     }
 
     //Redirect to token path
-
     /**
      * @return string
      */
