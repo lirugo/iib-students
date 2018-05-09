@@ -81,6 +81,7 @@ class RegisterController extends Controller
         try {
             $authyId = Authy::registerUser($user);
             $user->authy_id = $authyId;
+            $user->save();
         }catch(RegistrationFailedException $e){
             return redirect()->back();
         }
