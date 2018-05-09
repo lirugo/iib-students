@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'IIB'),
 
     /*
     |--------------------------------------------------------------------------
@@ -164,7 +164,7 @@ return [
         App\Providers\AuthyServiceProvider::class,
         // LaravelCollective
         Collective\Html\HtmlServiceProvider::class,
-
+        Laratrust\LaratrustServiceProvider::class,
 
     ],
 
@@ -220,6 +220,7 @@ return [
         //Laravel Collective
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Laratrust'   => Laratrust\LaratrustFacade::class,
 
     ],
 

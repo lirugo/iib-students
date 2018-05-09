@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call(DiallingCodesSeeder::class);
+         $this->call(LaratrustSeeder::class);
 
         // $this->call(UsersTableSeeder::class);
     }
