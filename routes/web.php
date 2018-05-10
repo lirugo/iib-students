@@ -31,3 +31,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/user/profile', 'User\ProfileController@index');
     Route::post('/user/profile', 'User\ProfileController@update')->name('user.profile.update');
 });
+
+//Manage route
+Route::prefix('manage')->middleware('role:manager')->group(function (){
+    Route::get('/', 'Manage\ManageController@index');
+});

@@ -10,7 +10,9 @@
                         <div class="col-md-4">
                             {!! Form::open(['route' => 'user.profile.update']) !!}
                             {!! Form::text('name', Auth::user()->name, ['class' => 'form-control', 'readonly']) !!}
+                            @if(Auth::user()->hasPhoneNumber())
                             {!! Form::text('phone', '+'.Auth::user()->phoneNumber->diallingCode->dialling_code.Auth::user()->phoneNumber->phone_number, ['class' => 'form-control', 'readonly']) !!}
+                            @endif
                             {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
                             {!! Form::close() !!}
                         </div>

@@ -43,6 +43,11 @@ class User extends Authenticatable
     public function hasSmsTwoFactorAuthenticationEnabled(){
         return $this->two_factor_type === 'sms';
     }
+
+    public function hasPhoneNumber(){
+        return $this->phoneNumber !== null;
+    }
+
     public function addPhoneNumber($phoneNumber, $phoneNumberDiallingCode){
         //Create phone number
         return $this->phoneNumber()->create([

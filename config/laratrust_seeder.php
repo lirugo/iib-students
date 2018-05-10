@@ -11,6 +11,10 @@ return [
             'users' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
+        'top-manager' => [
+            'users' => 'c,r,u,d',
+            'profile' => 'r,u'
+        ],
         'manager' => [
             'profile' => 'r,u'
         ],
