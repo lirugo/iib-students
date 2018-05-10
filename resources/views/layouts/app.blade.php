@@ -20,20 +20,26 @@
 </head>
 <body>
     <div id="app">
-
         {{--Navigation--}}
-        @include('_includes.menu.nav')
+        @include('_includes.menu.nav-top')
 
-        {{--Flash messages--}}
-        @include('_includes.notifications.messages')
-
-        <main class="py-4">
+        <div class="wrapper">
+            {{--Nav left--}}
+            @include('_includes.menu.nav-left')
+            {{--Flash messages--}}
+            <div class="container-fluid">
+            @include('_includes.notifications.messages')
+            {{--Content--}}
+                <main class="py-4">
             @yield('content')
-        </main>
+                </main>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/nav-left.js') }}" defer></script>
     @yield('scripts')
 
 </body>
