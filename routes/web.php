@@ -26,10 +26,10 @@ Route::post('/auth/token', 'Auth\AuthTokenController@postToken');
 Route::get('/auth/token/resend', 'Auth\AuthTokenController@getResend');
 
 //User route
-Route::group(['middleware' => 'auth'], function(){
+Route::prefix('user')->middleware('auth')->group(function (){
     //Profile route
-    Route::get('/user/profile', 'User\ProfileController@index');
-    Route::post('/user/profile', 'User\ProfileController@update')->name('user.profile.update');
+    Route::get('profile', 'User\ProfileController@index');
+    Route::post('profile', 'User\ProfileController@update')->name('user.profile.update');
 });
 
 //Manage route
