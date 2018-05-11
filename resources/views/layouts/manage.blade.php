@@ -19,26 +19,28 @@
     @yield('style')
 </head>
 <body>
-    <div id="app">
-        {{--Navigation--}}
-        @include('_includes.menu.nav-top.main')
+<div id="app">
+    {{--Navigation--}}
+    @include('_includes.menu.nav-top.main')
 
-        <div class="wrapper">
-            {{--Flash messages--}}
-            <div class="container-fluid">
+    <div class="wrapper">
+        {{--Nav left--}}
+        @include('_includes.menu.nav-left.main')
+        {{--Flash messages--}}
+        <div class="container-fluid">
             @include('_includes.notifications.messages')
             {{--Content--}}
-                <main class="py-4">
-            @yield('content')
-                </main>
-            </div>
+            <main class="py-4">
+                @yield('content')
+            </main>
         </div>
     </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/nav-left.js') }}" defer></script>
-    @yield('scripts')
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/nav-left.js') }}" defer></script>
+@yield('scripts')
 
 </body>
 </html>
