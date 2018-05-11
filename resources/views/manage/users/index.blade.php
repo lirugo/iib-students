@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <a class="tile"> Manage Users</a>
                         <a href="{{route('users.create')}}" class="btn btn-success btn-sm pull-right"><i class="fa fa-user"></i> Create user</a>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,7 +22,9 @@
                             Benjamin Franklin FRS FRSE (January 17, 1706 [O.S. January 6, 1705][1] – April 17, 1790)
                             was an American polymath and one of the Founding Fathers of the United States...
                         </p>
-                        <a href="#" class="btn btn-primary btn-sm pull-right">See Profile</a>
+                        <a href="#" class="btn btn-primary btn-sm">See Profile</a>
+                        <a href="#" class="btn btn-warning btn-sm">Edit Profile</a>
+                        <a href="#" class="btn btn-danger btn-sm">Delete User</a>
                     </div>
                 </div>
             </div>
@@ -35,7 +37,9 @@
                             Benjamin Franklin FRS FRSE (January 17, 1706 [O.S. January 6, 1705][1] – April 17, 1790)
                             was an American polymath and one of the Founding Fathers of the United States...
                         </p>
-                        <a href="#" class="btn btn-primary btn-sm pull-right">See Profile</a>
+                        <a href="#" class="btn btn-primary btn-sm">See Profile</a>
+                        <a href="#" class="btn btn-warning btn-sm">Edit Profile</a>
+                        <a href="#" class="btn btn-danger btn-sm">Delete User</a>
                     </div>
                 </div>
             </div>
@@ -48,7 +52,9 @@
                             Benjamin Franklin FRS FRSE (January 17, 1706 [O.S. January 6, 1705][1] – April 17, 1790)
                             was an American polymath and one of the Founding Fathers of the United States...
                         </p>
-                        <a href="#" class="btn btn-primary btn-sm pull-right">See Profile</a>
+                        <a href="#" class="btn btn-primary btn-sm">See Profile</a>
+                        <a href="#" class="btn btn-warning btn-sm">Edit Profile</a>
+                        <a href="#" class="btn btn-danger btn-sm">Delete User</a>
                     </div>
                 </div>
             </div>
