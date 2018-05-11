@@ -35,4 +35,5 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function (){
 //Manage route
 Route::group(['prefix' => 'manage', 'middleware' => ['role:manager']], function (){
     Route::get('/', 'Manage\ManageController@index');
+    Route::resource('users', 'Manage\UserController');
 });
