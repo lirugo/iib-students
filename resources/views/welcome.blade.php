@@ -79,7 +79,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel {{__('app.Hello')}}
+                    <form action="/language" method="post">
+                        <input type=image src="/img/icon/flags/ru.svg" name="locale" value="ru" width="25px" class="flag" alt="Russian">
+                        <input type=image src="/img/icon/flags/ua.svg" name="locale" value="ua" width="25px" class="flag m-l-10" alt="Ukrainian">
+                        <input type=image src="/img/icon/flags/en.svg" name="locale" value="en" width="25px" class="flag m-l-10" alt="English">
+                        {{ csrf_field() }}
+                    </form>
                 </div>
 
                 <div class="links">

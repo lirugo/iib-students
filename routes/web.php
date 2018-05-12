@@ -1,6 +1,7 @@
 <?php
 
 /*
+ *
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -10,6 +11,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+/*
+|--------------------------------------------------------------------------
+| Language switch route
+|--------------------------------------------------------------------------
+*/
+Route::post('/language', [
+    'Middleware' => 'Language',
+    'uses' => 'LanguageController@index'
+]);
+
 
 Route::get('/', function () {
     return view('welcome');
