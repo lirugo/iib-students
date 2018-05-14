@@ -5,13 +5,13 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Two factor authentication</div>
+                    <div class="card-header">{{__('app.Two factor authentication')}}</div>
                     <div class="card-body">
                         <form method="POST" action="{{ url('/auth/token') }}">
                             @csrf
 
                             <div class="form-group row">
-                                <label for="token" class="col-sm-4 col-form-label text-md-right">{{ __('Enter your token') }}</label>
+                                <label for="token" class="col-sm-4 col-form-label text-md-right">{{ __('app.Enter your token') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="token" type="number" class="form-control{{ $errors->has('token') ? ' is-invalid' : '' }}" name="token" value="{{ old('token') }}" required autofocus>
@@ -31,7 +31,7 @@
 
                                     @if(request()->session()->get('authy.using_sms'))
                                         <hr>
-                                        <p class="help-block">Token not arrived? <a href="{{ url('/auth/token/resend') }}">Resend token</a></p>
+                                        <p class="help-block">{{__('app.Token not arrived?')}} <a href="{{ url('/auth/token/resend') }}">{{__('app.Resend token')}}</a></p>
                                     @endif
                                 </div>
                             </div>
