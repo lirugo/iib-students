@@ -10,3 +10,27 @@
   -webkit-transform:rotate(90deg);
   transform:rotate(90deg);
 }
+
+//Wrapper
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+i, span {
+  display: inline-block;
+}

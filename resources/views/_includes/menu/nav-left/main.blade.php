@@ -14,8 +14,7 @@
                 <img src="/uploads/avatars/default.png" width="35px">
             </strong>
         </div>
-
-        <ul class="list-unstyled components">
+        <ul class="list-unstyled">
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
                     <i class="fa fa-home"></i>
@@ -50,6 +49,7 @@
                 </a>
             </li>
         </ul>
+        <ul class="components"></ul>
         <ul class="list-unstyled ">
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">

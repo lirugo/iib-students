@@ -13,7 +13,8 @@
 //Custom SASS
 @import "overrides";
 @import "helpers";
-@import "nav-left";
+@import "menu/nav-left/main";
+@import "menu/nav-top/main";
 @import "styles";
 
 .navbar-laravel {

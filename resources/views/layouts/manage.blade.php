@@ -35,6 +35,7 @@
             </main>
         </div>
     </div>
+    @include('_includes.footer.main')
 </div>
 
 <!-- Scripts -->
