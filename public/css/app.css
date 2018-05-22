@@ -14153,7 +14153,7 @@ a[aria-expanded="true"] {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .navbar-btn {
