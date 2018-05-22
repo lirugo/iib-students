@@ -1,6 +1,6 @@
 <!-- Footer Links -->
 <ul class="components"></ul>
-<div class="container text-center text-md-left">
+<div class="container text-center text-md-left p-b-50">
     <!-- Grid row -->
     <div class="row mt-4">
 
@@ -22,38 +22,38 @@
             <h6 class="text-uppercase font-weight-bold">Products</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-                <a href="#!">MDBootstrap</a>
+                MDBootstrap
             </p>
             <p>
-                <a href="#!">MDWordPress</a>
+                MDWordPress
             </p>
             <p>
-                <a href="#!">BrandFlow</a>
+                BrandFlow
             </p>
             <p>
-                <a href="#!">Bootstrap Angular</a>
+                Bootstrap Angular
             </p>
 
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="color:#000;">
 
             <!-- Links -->
             <h6 class="text-uppercase font-weight-bold">Useful links</h6>
             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
             <p>
-                <a href="#!">Your Account</a>
+                Your Account
             </p>
             <p>
-                <a href="#!">Become an Affiliate</a>
+                Become an Affiliate
             </p>
             <p>
-                <a href="#!">Shipping Rates</a>
+                Shipping Rates
             </p>
             <p>
-                <a href="#!">Help</a>
+                Help
             </p>
 
         </div>
