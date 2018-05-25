@@ -42,7 +42,7 @@ i, span {
 }
 
 //navigation top
-.navbar-nav{
+.navbar-nav > li{
   line-height:75px;
 }
 .navbar-nav > li {
@@ -56,4 +56,28 @@ i, span {
 
 .navbar-nav > li:hover .fa {
   color : #3e404f;
+}
+
+.navbar-nav > li:hover a {
+  color : #3e404f !important;
+}
+
+//Drop down language
+.dropdown-menu >li:hover {
+  background: #3e404f;
+}
+.dropdown-menu >li:hover a{
+  color: #f6f8fa !important;
+}
+
+.dropdown-menu{
+  text-align: center;
+  min-width:75px;
+  margin:0;
+  padding:0;
+  border-radius:0;
+}
+
+.dropdown-menu > li{
+  line-height:30px;
 }

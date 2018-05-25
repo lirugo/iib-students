@@ -17,24 +17,32 @@
                 @endif
             </ul>
 
+            {{--Clock--}}
+            <clock></clock>
 
-            <date></date>
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto" style="margin: 0; padding: 0; height:auto">
+            <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                 @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">UA <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a>UA</a></li>
+                            <li><a>RU</a></li>
+                            <li><a>ENG</a></li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="#">
                             <span class="fa fa-cogs"></span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+                    <li onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
+                        <a href="{{ route('logout') }}">
                             <span class="fa fa-sign-out"></span>
                         </a>
 

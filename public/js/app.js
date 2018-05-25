@@ -14001,7 +14001,7 @@ window.Vue = __webpack_require__(37);
 */
 
 Vue.component('example-component', __webpack_require__(40));
-Vue.component('date', __webpack_require__(43));
+Vue.component('clock', __webpack_require__(43));
 
 var app = new Vue({
   el: '#app'
@@ -47404,7 +47404,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/date/Date.vue"
+Component.options.__file = "resources/assets/js/components/clock/Clock.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47413,9 +47413,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-a25cdbf0", Component.options)
+    hotAPI.createRecord("data-v-eaaf3034", Component.options)
   } else {
-    hotAPI.reload("data-v-a25cdbf0", Component.options)
+    hotAPI.reload("data-v-eaaf3034", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47506,7 +47506,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-a25cdbf0", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-eaaf3034", module.exports)
   }
 }
 

@@ -16,7 +16,7 @@
   */
 
     Vue.component('example-component', require('./components/ExampleComponent.vue'));
-    Vue.component('date', require('./components/date/Date.vue'));
+    Vue.component('clock', require('./components/clock/Clock.vue'));
 
     const app = new Vue({
         el: '#app'

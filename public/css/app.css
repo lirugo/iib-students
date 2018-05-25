@@ -13516,7 +13516,7 @@ span {
   display: inline-block;
 }
 
-.navbar-nav {
+.navbar-nav > li {
   line-height: 75px;
 }
 
@@ -13531,6 +13531,30 @@ span {
 
 .navbar-nav > li:hover .fa {
   color: #3e404f;
+}
+
+.navbar-nav > li:hover a {
+  color: #3e404f !important;
+}
+
+.dropdown-menu > li:hover {
+  background: #3e404f;
+}
+
+.dropdown-menu > li:hover a {
+  color: #f6f8fa !important;
+}
+
+.dropdown-menu {
+  text-align: center;
+  min-width: 75px;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.dropdown-menu > li {
+  line-height: 30px;
 }
 
 /*
@@ -14112,7 +14136,7 @@ a[aria-expanded="true"] {
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ffbbbc;
+  color: #363c4d;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -14121,28 +14145,28 @@ a[aria-expanded="true"] {
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #ffbbbc;
+  color: #363c4d;
 }
 
 .navbar-default .navbar-nav .active > a,
 .navbar-default .navbar-nav .active > a:hover,
 .navbar-default .navbar-nav .active > a:focus {
-  color: #ffbbbc;
+  color: #363c4d;
   background-color: #c0392b;
 }
 
 .navbar-default .navbar-nav .open > a,
 .navbar-default .navbar-nav .open > a:hover,
 .navbar-default .navbar-nav .open > a:focus {
-  color: #ffbbbc;
+  color: #363c4d;
   background-color: #c0392b;
 }
 
 .navbar-default .navbar-nav .open > a .caret,
 .navbar-default .navbar-nav .open > a:hover .caret,
 .navbar-default .navbar-nav .open > a:focus .caret {
-  border-top-color: #ffbbbc;
-  border-bottom-color: #ffbbbc;
+  border-top-color: #363c4d;
+  border-bottom-color: #363c4d;
 }
 
 .navbar-default .navbar-nav > .dropdown > a .caret {
@@ -14152,8 +14176,8 @@ a[aria-expanded="true"] {
 
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-  border-top-color: #ffbbbc;
-  border-bottom-color: #ffbbbc;
+  border-top-color: #363c4d;
+  border-bottom-color: #363c4d;
 }
 
 .navbar-default .navbar-toggle {
@@ -14176,7 +14200,7 @@ a[aria-expanded="true"] {
 
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffbbbc;
+    color: #363c4d;
     background-color: #c0392b;
   }
 }
@@ -14189,7 +14213,7 @@ a[aria-expanded="true"] {
 }
 
 .clock-time {
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .rotate {
