@@ -21,7 +21,7 @@
 <body>
     <div id="app">
         {{--Navigation--}}
-        @include('_includes.menu.nav-top.main')
+        @include('_includes.menu.nav-top.guest')
 
         <div class="wrapper">
             {{--Flash messages--}}
