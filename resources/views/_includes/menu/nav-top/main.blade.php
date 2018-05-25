@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-default">
+<nav class="navbar navbar-expand-md navbar-default" style=" padding-top: 0;padding-bottom: 0;">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -18,17 +18,20 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" style="margin: 0; padding: 0; height:auto">
                 <!-- Authentication Links -->
                 @guest
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                 @else
-                    <li class="nav-item">
-                        <a href="#" class="m-r-15">
+                    <li style="color:white">date time</li>
+                    <li>
+                        <a href="#">
                             <span class="fa fa-cogs"></span>
                         </a>
-                        <a href="{{ route('logout') }}"  class="m-r-15"
+                    </li>
+                    <li>
+                        <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                             <span class="fa fa-sign-out"></span>

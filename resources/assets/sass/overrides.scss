@@ -16,3 +16,44 @@ a, a:hover, a:focus {
 .btn{
   border-radius: 0;
 }
+
+//Wrapper
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  min-height: 90vh;
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+i, span {
+  display: inline-block;
+}
+
+//navigation top
+.navbar-nav{
+  line-height:50px;
+}
+.navbar-nav > li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-nav > li:hover {
+  background: #f6f8fa;
+}
+
+.navbar-nav > li:hover .fa {
+  color : #3e404f;
+}

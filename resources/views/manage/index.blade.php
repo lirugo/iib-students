@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">Manage panel</div>
                     <div class="card-body">
-                      Manage panel
+                        Manage panel
                     </div>
                 </div>
             </div>

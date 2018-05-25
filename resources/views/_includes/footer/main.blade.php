@@ -38,7 +38,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="color:#000;">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
             <!-- Links -->
             <h6 class="text-uppercase font-weight-bold">Useful links</h6>

@@ -20,7 +20,7 @@
 </head>
 <body>
 <div id="app">
-    {{--Navigation--}}
+    {{--Nav Top--}}
     @include('_includes.menu.nav-top.main')
 
     <div class="wrapper">
