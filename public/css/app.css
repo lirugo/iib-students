@@ -13517,12 +13517,12 @@ span {
 }
 
 .navbar-nav {
-  line-height: 50px;
+  line-height: 75px;
 }
 
 .navbar-nav > li {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .navbar-nav > li:hover {
@@ -14181,6 +14181,17 @@ a[aria-expanded="true"] {
   }
 }
 
+.clock-main {
+  background: #f6f8fa;
+  height: 75px;
+  padding: 0 10px 0 10px;
+  color: #3e404f;
+}
+
+.clock-time {
+  font-size: 25px;
+}
+
 .rotate {
   -webkit-transition: all 2s linear;
   -webkit-transition: all 500ms linear;
@@ -14190,6 +14201,19 @@ a[aria-expanded="true"] {
 .rotate.down {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.no-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+.no-m {
+  margin: 0;
+}
+
+.no-p {
+  padding: 0;
 }
 
 .navbar-laravel {

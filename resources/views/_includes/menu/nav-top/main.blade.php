@@ -17,6 +17,8 @@
                 @endif
             </ul>
 
+
+            <date></date>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto" style="margin: 0; padding: 0; height:auto">
                 <!-- Authentication Links -->
@@ -24,7 +26,6 @@
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                 @else
-                    <li style="color:white">date time</li>
                     <li>
                         <a href="#">
                             <span class="fa fa-cogs"></span>

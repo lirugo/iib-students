@@ -47441,14 +47441,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    },
     data: function data() {
         return {
-            time: '14:27:36',
-            date: '2018-08-20 SUN'
+            time: '',
+            date: '',
+            days: ['Sun', 'Mon', 'Tu', 'We', 'Th', 'Fr', 'Sa']
         };
+    },
+
+    methods: {
+        startTime: function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = this.checkFormat(m);
+            s = this.checkFormat(s);
+            this.time = h + ":" + m + ":" + s;
+            var t = setTimeout(this.startTime, 500);
+        },
+        checkFormat: function checkFormat(i) {
+            if (i < 10) {
+                i = "0" + i;
+            } // add zero in front of numbers < 10
+            return i;
+        },
+        getDate: function getDate() {
+            var today = new Date();
+            var y = today.getFullYear();
+            var m = this.checkFormat(today.getMonth() + 1);
+            var d = this.checkFormat(today.getDate());
+            var day = today.getDay();
+            this.date = y + '-' + m + '-' + d + ' ' + this.days[day];
+        }
+    },
+    mounted: function mounted() {
+        console.log('Component mounted.');
+        this.startTime();
+        this.getDate();
     }
 });
 
@@ -47460,10 +47490,14 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._v("\n        " + _vm._s(_vm.time) + "\n        "),
-    _c("br"),
-    _vm._v("\n        " + _vm._s(_vm.date) + "\n")
+  return _c("div", { staticClass: "clock-main" }, [
+    _c("div", { staticClass: "clock-time text-center" }, [
+      _vm._v(_vm._s(_vm.time))
+    ]),
+    _vm._v(" "),
+    _c("hr", { staticClass: "no-m-p" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "text-center" }, [_vm._v(_vm._s(_vm.date))])
   ])
 }
 var staticRenderFns = []
