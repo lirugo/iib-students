@@ -48,7 +48,7 @@
             }
         },
         mounted() {
-            console.log('Component mounted.');
+            console.log('Component clock mounted.');
             this.startTime();
             this.getDate();
 

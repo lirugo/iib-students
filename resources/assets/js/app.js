@@ -17,6 +17,7 @@
 
     Vue.component('example-component', require('./components/ExampleComponent.vue'));
     Vue.component('clock', require('./components/clock/Clock.vue'));
+    Vue.component('bars', require('./components/menu/Bars.vue'));
 
     const app = new Vue({
         el: '#app'

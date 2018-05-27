@@ -8,13 +8,9 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="fa fa-bars"></span>
                 </button>
-                @if(!Auth::guest())
-                <a id="sidebarCollapse" >
-                    <div class="navbar-toggler-icon rotate"></div>
-                </a>
-                @endif
+                <bars></bars>
             </ul>
 
             {{--Clock--}}
