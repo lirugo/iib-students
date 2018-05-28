@@ -19,6 +19,49 @@
     Vue.component('clock', require('./components/clock/Clock.vue'));
     Vue.component('bars', require('./components/menu/Bars.vue'));
 
+    //Chat
+    Vue.component('chat-message', require('./components/chat/Message.vue'));
+    Vue.component('chat-log', require('./components/chat/Log.vue'));
+    Vue.component('chat-composer', require('./components/chat/Composer.vue'));
+
     const app = new Vue({
-        el: '#app'
+        el: '#app',
+        data: {
+            messages: [],
+            usersInRoom: []
+        },
+        methods: {
+            addMessage(message){
+                // add message
+                this.messages.push(message);
+                // persist to database
+                axios.post('/messages', message).then(response => {
+
+                });
+                console.log('message added');
+            }
+        },
+        created(){
+            axios.get('/messages').then(response => {
+                this.messages = response.data;
+            });
+
+            Echo.join('chat')
+                .here((users) => {
+                    this.usersInRoom = users;
+                })
+                .joining((user) => {
+                    this.usersInRoom.push(user);
+                })
+                .leaving((user) => {
+                    this.usersInRoom = this.usersInRoom.filter(u => u != user);
+                })
+                .listen('MessagePosted', (e) => {
+                    this.messages.push({
+                        message: e.message.message,
+                        user: e.user
+                    });
+                    console.log(e);
+                });
+        }
 });

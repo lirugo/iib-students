@@ -55,4 +55,8 @@ class User extends Authenticatable
             'dialling_code_id' => $phoneNumberDiallingCode
         ]);
     }
+
+    public function messages(){
+        return $this->hasMany(Message::class);
+    }
 }

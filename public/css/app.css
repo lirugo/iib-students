@@ -13487,6 +13487,10 @@ a:focus {
   border-radius: 0;
 }
 
+.form-control {
+  border-radius: 0;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
