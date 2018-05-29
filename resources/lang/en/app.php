@@ -12,6 +12,8 @@ return [
     'Password' => 'Password',
     'Remember Me' => 'Remember Me',
     'Forgot Your Password?' => 'Forgot Your Password?',
+    'Who are you?' => 'Who are you?',
+
 
     /*
     |--------------------------------------------------------------------------
