@@ -23,12 +23,15 @@
     Vue.component('chat-message', require('./components/chat/Message.vue'));
     Vue.component('chat-log', require('./components/chat/Log.vue'));
     Vue.component('chat-composer', require('./components/chat/Composer.vue'));
+    Vue.component('user-block', require('./components/chat/users/User.vue'));
+    Vue.component('users-list', require('./components/chat/users/Log.vue'));
 
     const app = new Vue({
         el: '#app',
         data: {
             messages: [],
-            usersInRoom: []
+            usersInRoom: [],
+            users: []
         },
         methods: {
             addMessage(message){
@@ -38,12 +41,15 @@
                 axios.post('/messages', message).then(response => {
 
                 });
-                console.log('message added');
             }
         },
         created(){
             axios.get('/messages').then(response => {
                 this.messages = response.data;
+            });
+
+            axios.get('/users').then(response => {
+                this.users = response.data;
             });
 
             Echo.join('chat')

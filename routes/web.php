@@ -54,5 +54,6 @@ Route::group(['prefix' => 'manage', 'middleware' => ['role:manager']], function 
 //Chat
 Route::get('/chat', 'Chat\ChatController@index');
 Route::get('/messages', 'Chat\ChatController@getMessages');
+Route::get('/users', 'Chat\ChatController@getUsers');
 Route::post('/messages', 'Chat\ChatController@create')->name('messages');
 //Chat

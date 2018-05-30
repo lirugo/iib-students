@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Chat;
 
 use App\Events\MessagePosted;
 use App\Message;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -36,5 +37,17 @@ class ChatController extends Controller
 
     public function getMessages(){
         return Message::with('user')->get();
+    }
+
+    public function getUsers(){
+        //Get users
+        $users = User::all();
+
+        //Add to user last message
+        foreach($users as $user)
+            $user->lastMessage = $user->lastMessage();
+
+        //Return users
+        return $users;
     }
 }

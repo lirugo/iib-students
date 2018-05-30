@@ -10,7 +10,7 @@
 <script>
     export default {
         mounted() {
-            console.log('Component chat-log mounted.')
+            console.log('Component chat-log mounted.');
         },
         props: ['messages']
     }

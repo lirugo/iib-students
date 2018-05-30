@@ -59,4 +59,8 @@ class User extends Authenticatable
     public function messages(){
         return $this->hasMany(Message::class);
     }
+
+    public function lastMessage(){
+        return Message::where('user_id', '=', $this->id)->orderBy('created_at', 'desc')->first();
+    }
 }
