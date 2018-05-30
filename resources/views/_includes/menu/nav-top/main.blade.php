@@ -1,15 +1,16 @@
 <nav class="navbar navbar-expand-md navbar-default" style=" padding-top: 0;padding-bottom: 0;">
     <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url('/') }}">
+            {{--{{ config('app.name', 'IIB') }}--}}
+            <img src="/img/logo/logo.jpg" width="50px;"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars color-white"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{--{{ config('app.name', 'IIB') }}--}}
-                <img src="/img/logo/logo.jpg" width="50px;"/>
-            </a>
+
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars"></span>
-                </button>
                 <bars></bars>
             </ul>
 
